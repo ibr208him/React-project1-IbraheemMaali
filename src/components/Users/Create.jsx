@@ -72,6 +72,7 @@ const sendData=async (e)=>{
 
 if(Object.keys(UserValidation(user)).length>0){ // object.keys(objectname) used to check if the object is empty
    setErrors(UserValidation(user));
+   setLoader(false);
 }
  else{
   const {data}=await axios.post("https://crud-users-gold.vercel.app/users/",user).catch(err=>{
